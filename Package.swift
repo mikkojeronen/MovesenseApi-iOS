@@ -12,7 +12,7 @@ let package = Package(
             targets: ["MovesenseApi"]),
     ],
     dependencies: [
-        .package(path: "../MovesenseMds-iOS")
+        .package(url: "git@github.com:mikkojeronen/MovesenseMds-iOS.git", branch: "main")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
