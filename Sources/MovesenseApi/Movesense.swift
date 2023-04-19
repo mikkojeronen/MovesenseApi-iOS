@@ -1,8 +1,18 @@
+//
+//  Movesense.swift
+//  MovesenseApi
+//
+//  Copyright © 2023 Canned Bit Ltd. All rights reserved.
+//  Copyright © 2018 Suunto. All rights reserved.
+//
+
+// TODO: Get rid of these unnecessary dependencies
 import CoreBluetooth
 import UIKit
 
-/// Movesense related constants 
+// Movesense related constants
 final public class Movesense {
+
     static public let MOVESENSE_SERVICES = [CBUUID(string: "61353090-8231-49cc-b57a-886370740041"),CBUUID(string: "fdf3")]
     static public let MOVESENSE_COLOR = UIColor(red:0.93, green:0.19, blue:0.14, alpha:1.0)
 

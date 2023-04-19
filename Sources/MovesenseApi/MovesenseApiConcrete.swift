@@ -11,9 +11,11 @@ internal class MovesenseApiConcrete: MovesenseApi {
 
     static let sharedInstance: MovesenseApi = MovesenseApiConcrete()
 
+    // Observer
     internal var observations: [Observation] = [Observation]()
     private(set) var observationQueue: DispatchQueue = DispatchQueue.global()
 
+    // MovesenseApiConcrete
     private let model: MovesenseModel
     private let controller: MovesenseController
 
@@ -33,7 +35,7 @@ internal class MovesenseApiConcrete: MovesenseApi {
         self.model.addObserver(self)
     }
 
-    // MovesenseApiProtocol
+    // MovesenseApi
     func startScan() {
         controller.startScan()
     }

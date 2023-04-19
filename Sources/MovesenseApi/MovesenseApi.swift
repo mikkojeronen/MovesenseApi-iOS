@@ -2,6 +2,7 @@
 //  MovesenseApi.swift
 //  MovesenseApi
 //
+//  Copyright © 2023 Canned Bit Ltd. All rights reserved.
 //  Copyright © 2018 Suunto. All rights reserved.
 //
 
@@ -12,7 +13,7 @@ import MovesenseMds
 extension Movesense {
 
     public static var api: MovesenseApi {
-        return MovesenseApiConcrete.sharedInstance
+        return MovesenseApiFactory.sharedApiInstance
     }
 }
 
