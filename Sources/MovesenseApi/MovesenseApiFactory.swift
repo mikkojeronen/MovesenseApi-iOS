@@ -26,9 +26,13 @@ public class MovesenseApiFactory {
         if let currentApi = apiInstance {
             NSLog("MovesenseApiFactory::injectApi instance already exists.")
 
-            if let injectedApi = injectedApi {
+            if let injectedApi = injectedApi,
+               let observerApi = currentApi as? Observer {
+
                 let prevApi = currentApi
                 apiInstance = injectedApi
+
+                injectedApi.addObserver(observerApi)
 
                 return prevApi
             }

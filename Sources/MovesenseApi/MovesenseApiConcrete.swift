@@ -103,6 +103,7 @@ extension MovesenseApiConcrete: Observer {
         switch event {
         case let event as MovesenseObserverEventModel: handleEventModel(event)
         case let event as MovesenseObserverEventDevice: handleEventDevice(event)
+        case let event as MovesenseObserverEventApi: notifyObservers(event)
         default: assertionFailure("MovesenseApiConcrete::handleEvent: Invalid event.")
         }
     }
