@@ -57,6 +57,14 @@ public extension Observable {
         }
     }
 
+    func transferObservers(to observable: Observable) {
+        observable.observations += observations.filter { observation in
+            observable.observations.contains { $0.observer === observation.observer } == false
+        }
+
+        observations.removeAll()
+    }
+
     func notifyObservers(_ event: ObserverEvent) {
         observationQueue.async { [observations] in
             observations.compactMap { $0.observer }.forEach { $0.handleEvent(event) }
