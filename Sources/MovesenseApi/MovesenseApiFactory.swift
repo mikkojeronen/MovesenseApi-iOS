@@ -14,11 +14,11 @@ public class MovesenseApiFactory {
 
     public static var sharedApiInstance: MovesenseApi {
         get {
-            NSLog("MovesenseApiFactory::get sharedApiInstance")
             return apiInstance ?? injectApiOrDefault()
         }
     }
 
+    // TODO: Break this into two separate functions
     public static func injectApiOrDefault(_ injectedApi: MovesenseApi? = nil) -> MovesenseApi {
         NSLog("MovesenseApiFactory::injectApi")
 
@@ -27,12 +27,13 @@ public class MovesenseApiFactory {
             NSLog("MovesenseApiFactory::injectApi instance already exists.")
 
             if let injectedApi = injectedApi,
-               let observerApi = currentApi as? Observer {
+               let observerApi = injectedApi as? Observer {
 
                 let prevApi = currentApi
                 apiInstance = injectedApi
 
-                injectedApi.addObserver(observerApi)
+                prevApi.transferObservers(to: injectedApi)
+                prevApi.addObserver(observerApi)
 
                 return prevApi
             }
