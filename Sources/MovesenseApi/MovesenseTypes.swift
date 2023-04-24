@@ -2,6 +2,7 @@
 //  MovesenseTypes.swift
 //  MovesenseApi
 //
+//  Copyright © 2023 Canned Bit Ltd. All rights reserved.
 //  Copyright © 2019 Movesense. All rights reserved.
 //
 
@@ -37,6 +38,11 @@ public struct MovesenseAddressInfo: Codable {
 
     public let address: String
     public let name: String
+
+    public init(address: String, name: String) {
+        self.address = address
+        self.name = name
+    }
 }
 
 public struct MovesenseInfo: Codable {
@@ -70,6 +76,21 @@ public struct MovesenseDeviceInfo: Codable {
     public let productName: String
     public let variantName: String
     public let addressInfo: [MovesenseAddressInfo]
+
+    public init(description: String, mode: Int, name: String, serialNumber: String, swVersion: String, hwVersion: String, hwCompatibilityId: String, manufacturerName: String, pcbaSerial: String, productName: String, variantName: String, addressInfo: [MovesenseAddressInfo]) {
+        self.description = description
+        self.mode = mode
+        self.name = name
+        self.serialNumber = serialNumber
+        self.swVersion = swVersion
+        self.hwVersion = hwVersion
+        self.hwCompatibilityId = hwCompatibilityId
+        self.manufacturerName = manufacturerName
+        self.pcbaSerial = pcbaSerial
+        self.productName = productName
+        self.variantName = variantName
+        self.addressInfo = addressInfo
+    }
 }
 
 public struct MovesenseHeartRate: Codable {
