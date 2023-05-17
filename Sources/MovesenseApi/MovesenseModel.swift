@@ -130,7 +130,7 @@ extension MovesenseModel: MovesenseControllerDelegate {
 
     func deviceDisconnected(_ serialNumber: String) {
         guard let device = (self.first { $0.serialNumber == serialNumber }) else {
-            let error = MovesenseError.integrityError("No such disconnected device.")
+            let error = MovesenseError.integrityError("No such disconnected device in model.")
             notifyObservers(MovesenseObserverEventModel.modelError(error))
             return
         }

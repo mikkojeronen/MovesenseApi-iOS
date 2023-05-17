@@ -148,7 +148,7 @@ extension MovesenseController: MovesenseBleControllerDelegate {
 
     func deviceFound(uuid: UUID, localName: String, serialNumber: String, rssi: Int) {
         let device = MovesenseDeviceConcrete(uuid: uuid, localName: localName,
-                                      serialNumber: serialNumber, rssi: rssi)
+                                             serialNumber: serialNumber, rssi: rssi)
         delegate?.deviceDiscovered(device)
     }
 }

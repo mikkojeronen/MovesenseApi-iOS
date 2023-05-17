@@ -109,7 +109,7 @@ public struct MovesenseResourceAcc: MovesenseResource {
         }
     }
 
-    init(_ sampleRates: [UInt]) {
+    public init(_ sampleRates: [UInt]) {
         self.sampleRate = MovesenseMethodParameterSampleRate(values: sampleRates)
     }
 
@@ -203,10 +203,10 @@ struct MovesenseResourceEcgInfo: MovesenseResource {
     let methods: [MovesenseMethod] = [.get]
 }
 
-struct MovesenseResourceInfo: MovesenseResource {
+public struct MovesenseResourceInfo: MovesenseResource {
 
-    let resourceType: MovesenseResourceType = .info
-    let methods: [MovesenseMethod] = [.get]
+    public let resourceType: MovesenseResourceType = .info
+    public let methods: [MovesenseMethod] = [.get]
 }
 
 public struct MovesenseResourceHeartRate: MovesenseResource {
