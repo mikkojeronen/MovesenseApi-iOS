@@ -152,7 +152,6 @@ class MovesenseOperationBase: MovesenseOperationInternal {
     }
 
     internal func handleEvent(header: [AnyHashable: Any], data: Data) {
-        //print("Event header:\n\(header)\n\(String(data: data, encoding: String.Encoding.utf8))")
 
         let event: MovesenseEvent?
         switch self.request.resourceType {
@@ -199,7 +198,6 @@ class MovesenseOperationBase: MovesenseOperationInternal {
 class MovesenseOperationSystemMode: MovesenseOperationBase {
 
     override func handleResponse(status: Int, header: [AnyHashable: Any], data: Data) {
-        //print("Completion status: \(status)\nHeader:\n\(header)\n\(String(data: data, encoding: String.Encoding.utf8))")
 
         let response: MovesenseResponse?
         switch operationRequest.method {
@@ -234,7 +232,6 @@ class MovesenseOperationSystemMode: MovesenseOperationBase {
 class MovesenseOperationAccConfig: MovesenseOperationBase {
 
     override func handleResponse(status: Int, header: [AnyHashable: Any], data: Data) {
-        //print("Completion status: \(status)\nHeader:\n\(header)\n\(String(data: data, encoding: String.Encoding.utf8))")
 
         let response: MovesenseResponse?
         switch operationRequest.method {
@@ -265,7 +262,6 @@ class MovesenseOperationAccConfig: MovesenseOperationBase {
 class MovesenseOperationGyroConfig: MovesenseOperationBase {
 
     override func handleResponse(status: Int, header: [AnyHashable: Any], data: Data) {
-        //print("Completion status: \(status)\nHeader:\n\(header)\n\(String(data: data, encoding: String.Encoding.utf8))")
 
         let response: MovesenseResponse?
         switch operationRequest.method {

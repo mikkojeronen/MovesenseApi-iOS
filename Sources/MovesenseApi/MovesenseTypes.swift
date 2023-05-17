@@ -121,6 +121,12 @@ public struct MovesenseAppInfo: Codable {
     public let name: String
     public let version: String
     public let company: String
+
+    public init(name: String, version: String, company: String) {
+        self.name = name
+        self.version = version
+        self.company = company
+    }
 }
 
 public struct MovesenseEcg: Codable {
@@ -158,6 +164,12 @@ public struct MovesenseSystemEnergy: Codable {
     public let percentage: UInt8
     public let milliVolts: UInt16?
     public let internalResistance: UInt8?
+
+    public init(percentage: UInt8, milliVolts: UInt16?, internalResistance: UInt8?) {
+        self.percentage = percentage
+        self.milliVolts = milliVolts
+        self.internalResistance = internalResistance
+    }
 }
 
 public struct MovesenseSystemMode: Codable {
