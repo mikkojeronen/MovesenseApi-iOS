@@ -138,7 +138,7 @@ public struct MovesenseResourceAccConfig: MovesenseResource {
         }
     }
 
-    init(_ gRanges: [UInt8]) {
+    public init(_ gRanges: [UInt8]) {
         self.gRange = MovesenseMethodParameterGRange(values: gRanges)
     }
 
@@ -160,12 +160,16 @@ public struct MovesenseResourceAccInfo: MovesenseResource {
 
     public let resourceType: MovesenseResourceType = .accInfo
     public let methods: [MovesenseMethod] = [.get]
+
+    public init() { }
 }
 
 public struct MovesenseResourceAppInfo: MovesenseResource {
 
     public let resourceType: MovesenseResourceType = .appInfo
     public let methods: [MovesenseMethod] = [.get]
+
+    public init() { }
 }
 
 public struct MovesenseResourceEcg: MovesenseResource {
@@ -181,7 +185,7 @@ public struct MovesenseResourceEcg: MovesenseResource {
         }
     }
 
-    init(_ sampleRates: [UInt]) {
+    public init(_ sampleRates: [UInt]) {
         self.sampleRate = MovesenseMethodParameterSampleRate(values: sampleRates)
     }
 
@@ -197,10 +201,12 @@ public struct MovesenseResourceEcg: MovesenseResource {
     }
 }
 
-struct MovesenseResourceEcgInfo: MovesenseResource {
+public struct MovesenseResourceEcgInfo: MovesenseResource {
 
-    let resourceType: MovesenseResourceType = .ecgInfo
-    let methods: [MovesenseMethod] = [.get]
+    public let resourceType: MovesenseResourceType = .ecgInfo
+    public let methods: [MovesenseMethod] = [.get]
+
+    public init() {}
 }
 
 public struct MovesenseResourceInfo: MovesenseResource {
@@ -257,7 +263,7 @@ public struct MovesenseResourceGyroConfig: MovesenseResource {
         }
     }
 
-    init(_ dpsRanges: [UInt16]) {
+    public init(_ dpsRanges: [UInt16]) {
         self.dpsRange = MovesenseMethodParameterDpsRange(values: dpsRanges)
     }
 
@@ -275,10 +281,10 @@ public struct MovesenseResourceGyroConfig: MovesenseResource {
     }
 }
 
-struct MovesenseResourceGyroInfo: MovesenseResource {
+public struct MovesenseResourceGyroInfo: MovesenseResource {
 
-    let resourceType: MovesenseResourceType = .gyroInfo
-    let methods: [MovesenseMethod] = [.get]
+    public let resourceType: MovesenseResourceType = .gyroInfo
+    public let methods: [MovesenseMethod] = [.get]
 }
 
 struct MovesenseResourceLed: MovesenseResource {
@@ -312,6 +318,8 @@ public struct MovesenseResourceSystemEnergy: MovesenseResource {
 
     public let resourceType: MovesenseResourceType = .systemEnergy
     public let methods: [MovesenseMethod] = [.get]
+
+    public init() { }
 }
 
 public struct MovesenseResourceSystemMode: MovesenseResource {
