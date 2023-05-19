@@ -103,17 +103,31 @@ public struct MovesenseAcc: Codable {
 
     public let timestamp: UInt32
     public let vectors: [MovesenseVector3D]
+
+    public init(timestamp: UInt32, vectors: [MovesenseVector3D]) {
+        self.timestamp = timestamp
+        self.vectors = vectors
+    }
 }
 
 public struct MovesenseAccConfig: Codable {
 
     public let gRange: UInt8
+
+    public init(gRange: UInt8) {
+        self.gRange = gRange
+    }
 }
 
 public struct MovesenseAccInfo: Codable {
 
     public let sampleRates: [UInt16]
     public let ranges: [UInt8]
+
+    public init(sampleRates: [UInt16], ranges: [UInt8]) {
+        self.sampleRates = sampleRates
+        self.ranges = ranges
+    }
 }
 
 public struct MovesenseAppInfo: Codable {
