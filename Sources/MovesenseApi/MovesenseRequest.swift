@@ -54,7 +54,7 @@ public enum MovesenseRequestParameter {
 extension MovesenseRequestParameter: CustomStringConvertible {
 
     public var description: String {
-        return "\(name): \(value)"
+        return "\(name): \(valueWithUnit)"
     }
 
     public var name: String {
@@ -68,7 +68,18 @@ extension MovesenseRequestParameter: CustomStringConvertible {
         }
     }
 
-    public var value: String {
+    public var rawValue: Any {
+        switch self {
+        case .dpsRange(let dpsRange): return dpsRange
+        case .gRange(let gRange): return gRange
+        case .interval(let interval): return interval
+        case .isOn(let isOn): return isOn
+        case .sampleRate(let rate): return rate
+        case .systemMode(let mode): return mode
+        }
+    }
+
+    public var valueWithUnit: String {
         switch self {
         case .dpsRange(let dpsRange): return "\(dpsRange) deg/s"
         case .gRange(let gRange): return "\(gRange) G"
