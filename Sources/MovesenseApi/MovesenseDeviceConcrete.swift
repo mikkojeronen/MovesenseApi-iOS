@@ -2,6 +2,7 @@
 //  MovesenseDeviceConcrete.swift
 //  MovesenseApi
 //
+//  Copyright © 2023 Canned Bit Ltd. All rights reserved.
 //  Copyright © 2018 Suunto. All rights reserved.
 //
 
@@ -48,7 +49,7 @@ class MovesenseDeviceConcrete: MovesenseDevice {
     }
 
     func sendRequest(_ request: MovesenseRequest,
-                            observer: Observer) -> MovesenseOperation? {
+                     observer: Observer) -> MovesenseOperation? {
         guard let connection = movesenseConnection else {
             let error = MovesenseError.requestError("No connection to device.")
             notifyObservers(MovesenseObserverEventDevice.deviceError(self, error))
@@ -65,7 +66,7 @@ class MovesenseDeviceConcrete: MovesenseDevice {
     }
 
     func sendRequest(_ request: MovesenseRequest,
-                            handler: @escaping (MovesenseObserverEventOperation) -> Void) {
+                     handler: @escaping (MovesenseObserverEventOperation) -> Void) {
         guard movesenseConnection != nil else {
             let error = MovesenseError.requestError("No connection to device.")
             handler(MovesenseObserverEventOperation.operationError(error))
@@ -90,7 +91,7 @@ class MovesenseDeviceConcrete: MovesenseDevice {
     }
 
     func deviceConnected(_ deviceInfo: MovesenseDeviceInfo,
-                                  _ connection: MovesenseConnection) {
+                         _ connection: MovesenseConnection) {
         movesenseDeviceInfo = deviceInfo
         movesenseConnection = connection
 

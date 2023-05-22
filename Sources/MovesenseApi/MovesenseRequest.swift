@@ -2,6 +2,7 @@
 //  MovesenseRequest.swift
 //  MovesenseApi
 //
+//  Copyright © 2023 Canned Bit Ltd. All rights reserved.
 //  Copyright © 2018 Suunto. All rights reserved.
 //
 
@@ -43,7 +44,7 @@ internal extension MovesenseRequest {
 
 public enum MovesenseRequestParameter {
 
-    case dpsRange(_ gRange: UInt16)
+    case dpsRange(_ dpsRange: UInt16)
     case gRange(_ gRange: UInt8)
     case interval(_ interval: UInt8)
     case isOn(_ isOn: Bool)
