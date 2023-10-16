@@ -6,4 +6,4 @@ Developed primarily for the needs of Movesense Showcase app, depends on Movesens
 
 Usage is documented by example, check out [MovesenseShowcase-iOS](https://github.com/mikkojeronen/MovesenseShowcase-iOS) repository.
 
-This repository is my personally maintained fork from the point of time when I left the project, mostly for reference purposes and some tinkering.
+This repository is my personally maintained fork from the point of time when I left the project. The repository is mostly for reference purposes and some tinkering.
