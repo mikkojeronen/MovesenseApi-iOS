@@ -14,7 +14,7 @@ public struct MovesenseRequest {
     public let method: MovesenseMethod
     public let parameters: [MovesenseRequestParameter]?
 
-    public init(resourceType: MovesenseResourceType, method: MovesenseMethod, parameters: [MovesenseRequestParameter]?) {
+    public init(resourceType: MovesenseResourceType, method: MovesenseMethod, parameters: [MovesenseRequestParameter]? = nil) {
         self.resourceType = resourceType
         self.method = method
         self.parameters = parameters
